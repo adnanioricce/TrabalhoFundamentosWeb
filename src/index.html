@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <ul class="navbar">
+            <li> <a href="#" onclick="onChangeContent('sobremin')">Sobre mim</a> </li>
+            <li> <a href="#" onclick="onChangeContent('formacao')">Formação</a> </li>
+            <li> <a href="#" onclick="onChangeContent('portfolio')">Portfolio</a> </li>
+            <li> <a href="#" onclick="onChangeContent('contato')">Contato</a> </li>
+        </ul>
+    </div>
+    <div id="content" class="container">
+
+    </div>
+    <script type="text/javascript">
+        const sobremin = `
+            <h1>Meu nome é Adnan</h1>
+            <p>eu sou uma pessoa aleatória que esta aqui porque eu queria fazer jogos em algum momento, mas em outro fiquei aficionado em não morrer de fome.</p>
+            <p>Nos últimos tempos, felizmente(ou talvez não), a programação virou umas das coisas mais presentes na minha vida, mas fora isso, eu como coxinha,
+            tento não ser diabético antes dos 30, e estou em uma cruzada para colocar os jogos de novo em minha rotina, enquanto isso eu tento ler livros, quadrinhos,
+            animações, filmes, falar com amigos e outras coisas que alimentem minha alma.            
+            </p>
+        `
+        const formacao = `                        
+            <ul>
+                <li><div> <h5>Uninter</h5> Tecnologo em Análise e Desenvolvimento de Sistemas   Junho 2025</div></li>
+                <li><div> <h5>IFSP</h5> Bacharelado em Sistemas de Informação	Janeiro 2023(incompleto)</div></li>
+                <li><div> <h5>ETEC</h5> Técnico em Tecnologia da Informação	Dezembro 2019</div></li>
+            </ul>
+
+        `
+        const contato = `
+            <p>
+                Se quiser falar comigo, você pode me mandar um email: 
+                adnanioricce@outlook.com
+            </p>
+        `
+        const gof = `
+            <div>
+                <p>
+                    Conway's Game of Life foi a implementação de um "jogo" criado pelo matemático John Conway. O mesmo se trata de uma Automato celular.
+                    Eu fiz um como projeto de Ciências, segue um link pro <a href="https://github.com/adnanioricce/GameOfLife">projeto</a> atualizado
+                </p>
+                <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Mais sobre Jogo</a>
+            </div>
+            <iframe id="gofFrame" src="gof.html" width="1000" height="1000"  frameborder="0">
+        `        
+        const stormyCommerce = `
+            <a href="https://github.com/adnanioricce/StormyCommerce">StormyCommerce</a> foi meu projeto de conclusão de curso. Se trata de um ecommerce SAAS, o mesmo se trata de uma API, o frontend em si, 
+            foi entregue como uma aplicação Reactjs por um colega de grupo.            
+
+        `
+        const portfolio = `
+            <ul class="navbar">
+                <li> <a href="#" onclick="onChangeContent('gof')">Conway's Game of Life</a> </li>            
+                <li> <a href="#" onclick="onChangeContent('stormyCommerce')">StormyCommerce</a></li>         
+            </ul>   
+        `
+        const contents = {            
+            sobremin   
+            ,formacao  
+            ,contato
+            ,portfolio          
+            ,stormyCommerce
+            ,gof        
+        }        
+        function onChangeContent(id) {
+            const content = contents[id]
+            if(!content)
+                return ""            
+            document.getElementById("content").innerHTML = content            
+        }
+    </script>
+</body>
+</html>
